@@ -6,7 +6,8 @@ class CPU(private val program: List<Instruction>) {
     private var cycleCount = 0
 
     fun run(initialRegisters: List<Int> = (1..16).map { 0 }): RunResult {
-        assert(initialRegisters.size == registers.size)
+        if (initialRegisters.size != registers.size)
+            throw IllegalArgumentException("Supplied initial register is of wrong size. Should be ${registers.size}, found ${initialRegisters.size}")
 
         // set initial values
         initialRegisters.forEachIndexed { i, v -> registers[i] = v }
