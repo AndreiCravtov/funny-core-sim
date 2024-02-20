@@ -82,13 +82,13 @@ class CPU(private val program: List<Instruction>) {
             is Instruction.Bor -> {
                 registers[instruction.target.index] =
                     registers[instruction.source1.index] or
-                            registers[instruction.source1.index]
+                            registers[instruction.source2.index]
                 null
             }
             is Instruction.Band -> {
                 registers[instruction.target.index] =
                     registers[instruction.source1.index] and
-                            registers[instruction.source1.index]
+                            registers[instruction.source2.index]
                 null
             }
             is Instruction.Li -> {

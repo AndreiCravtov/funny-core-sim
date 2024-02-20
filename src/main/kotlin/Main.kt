@@ -9,8 +9,8 @@ infix fun Int.closest(n: Int) = this / n * n
 
 fun testDiv(source: String,
             iterations: Int = 1_000_00,
-            minQuotient: Int = 1_000,
-            groupSize: Int = 100,
+            minQuotient: Int = 10,
+            groupSize: Int = 25,
             barSize: Int = 150) {
     // Load program
     val program = parseTokens(parseString(source))

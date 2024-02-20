@@ -30,9 +30,11 @@ sealed class Instruction(val cycles: Int) {
     data class Jp(val condition: Register, val lines: Short): Instruction(3)
 }
 
-class Register(val index: Int) {
+data class Register(val index: Int) {
     init {
         if (index !in 0..15)
             throw IllegalArgumentException("Register index out of range")
     }
+
+    override fun toString() = index.toString()
 }
