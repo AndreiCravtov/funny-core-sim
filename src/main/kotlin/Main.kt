@@ -56,12 +56,12 @@ fun testDiv(source: String,
     val largestFreq = groupedData.values.max()
     println("Cycle count distribution visualisation:")
     for ((count, freq) in groupedData)
-        println("$count-${count+groupSize-1} : ${"*".repeat((freq.toDouble() / largestFreq * barSize).toInt())}")
+        println("$count-${count+groupSize-1} : ${"❘".repeat((freq.toDouble() / largestFreq * barSize).toInt())}")
 }
 
 fun main() {
     val source = """
-        your source code goes here :)
+        your code goes here :)
     """.trimIndent()
 
     testDiv(source)
